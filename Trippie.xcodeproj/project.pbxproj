@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8987DFE52834237D006186E1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8987DFE42834237D006186E1 /* HomeViewController.swift */; };
+		8987DFE828342473006186E1 /* TripModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8987DFE728342473006186E1 /* TripModel.swift */; };
+		8987DFEA28342755006186E1 /* TripService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8987DFE928342755006186E1 /* TripService.swift */; };
+		8987DFEC28342EA9006186E1 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8987DFEB28342EA9006186E1 /* HomeViewModel.swift */; };
 		8991B35B28341ACE0049B6B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8991B35A28341ACE0049B6B6 /* AppDelegate.swift */; };
 		8991B35D28341ACE0049B6B6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8991B35C28341ACE0049B6B6 /* SceneDelegate.swift */; };
-		8991B35F28341ACE0049B6B6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8991B35E28341ACE0049B6B6 /* ViewController.swift */; };
 		8991B36528341ACE0049B6B6 /* Trippie.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8991B36328341ACE0049B6B6 /* Trippie.xcdatamodeld */; };
 		8991B36728341AD30049B6B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8991B36628341AD30049B6B6 /* Assets.xcassets */; };
 		8991B36A28341AD30049B6B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8991B36828341AD30049B6B6 /* LaunchScreen.storyboard */; };
@@ -36,10 +39,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8987DFE42834237D006186E1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		8987DFE728342473006186E1 /* TripModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripModel.swift; sourceTree = "<group>"; };
+		8987DFE928342755006186E1 /* TripService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripService.swift; sourceTree = "<group>"; };
+		8987DFEB28342EA9006186E1 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		8991B35728341ACE0049B6B6 /* Trippie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trippie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8991B35A28341ACE0049B6B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8991B35C28341ACE0049B6B6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8991B35E28341ACE0049B6B6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8991B36428341ACE0049B6B6 /* Trippie.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Trippie.xcdatamodel; sourceTree = "<group>"; };
 		8991B36628341AD30049B6B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8991B36928341AD30049B6B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -76,6 +82,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8987DFDF283422A3006186E1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8987DFE42834237D006186E1 /* HomeViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8987DFE0283422AF006186E1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8987DFE728342473006186E1 /* TripModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8987DFE1283422B3006186E1 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				8987DFE928342755006186E1 /* TripService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		8987DFE2283422C1006186E1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8987DFEB28342EA9006186E1 /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8987DFE3283422DE006186E1 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				8991B35C28341ACE0049B6B6 /* SceneDelegate.swift */,
+				8991B35A28341ACE0049B6B6 /* AppDelegate.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
 		8991B34E28341ACE0049B6B6 = {
 			isa = PBXGroup;
 			children = (
@@ -99,9 +146,11 @@
 		8991B35928341ACE0049B6B6 /* Trippie */ = {
 			isa = PBXGroup;
 			children = (
-				8991B35A28341ACE0049B6B6 /* AppDelegate.swift */,
-				8991B35C28341ACE0049B6B6 /* SceneDelegate.swift */,
-				8991B35E28341ACE0049B6B6 /* ViewController.swift */,
+				8987DFE3283422DE006186E1 /* Core */,
+				8987DFE0283422AF006186E1 /* Model */,
+				8987DFE1283422B3006186E1 /* Service */,
+				8987DFE2283422C1006186E1 /* ViewModel */,
+				8987DFDF283422A3006186E1 /* View */,
 				8991B36628341AD30049B6B6 /* Assets.xcassets */,
 				8991B36828341AD30049B6B6 /* LaunchScreen.storyboard */,
 				8991B36B28341AD30049B6B6 /* Info.plist */,
@@ -278,10 +327,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8991B35F28341ACE0049B6B6 /* ViewController.swift in Sources */,
 				8991B36528341ACE0049B6B6 /* Trippie.xcdatamodeld in Sources */,
 				8991B35B28341ACE0049B6B6 /* AppDelegate.swift in Sources */,
+				8987DFEC28342EA9006186E1 /* HomeViewModel.swift in Sources */,
 				8991B35D28341ACE0049B6B6 /* SceneDelegate.swift in Sources */,
+				8987DFE828342473006186E1 /* TripModel.swift in Sources */,
+				8987DFEA28342755006186E1 /* TripService.swift in Sources */,
+				8987DFE52834237D006186E1 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
