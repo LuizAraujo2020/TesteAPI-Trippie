@@ -7,32 +7,16 @@
 
 import Foundation
 
-enum ServiceUnsplashError: LocalizedError {
-    case urlNil
-    case dataNil
-    case parseFailure
-    
-    var errorDescription: String? {
-        switch self {
-        case .urlNil:
-            return "URL não encontrada!"
-        case .dataNil:
-            return "Download não encontrado!"
-        case .parseFailure:
-            return "Dados inválidos!"
-        }
-    }
-}
-
 protocol SessionRequest {
     func dataTask(with request: URL, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask
 }
 
 class TripService {
-    private let key = "MhhlHI6wOceOY7nYiKoAwqZgUVtuw_IFdxrBE8BOEM0"
-    var session: SessionRequest
     
     typealias completionHandler = (Result<Unsplash?, ServiceUnsplashError>) -> Void
+    
+    private let key = "MhhlHI6wOceOY7nYiKoAwqZgUVtuw_IFdxrBE8BOEM0"
+    private let session: SessionRequest
     
     init(session: SessionRequest = URLSession.shared) {
         self.session = session
@@ -58,9 +42,8 @@ class TripService {
             } catch _ {
                 completion(.failure(ServiceUnsplashError.parseFailure))
             }
-
         }.resume()
     }
 }
 
-extension URLSession: SessionRequest { }
+

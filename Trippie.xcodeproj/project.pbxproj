@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1DC373AC28343F230052CE68 /* ServiceUnsplashError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC373AB28343F230052CE68 /* ServiceUnsplashError.swift */; };
+		1DC373AF28343FD20052CE68 /* URLSession+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC373AE28343FD20052CE68 /* URLSession+Extension.swift */; };
 		8987DFE52834237D006186E1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8987DFE42834237D006186E1 /* HomeViewController.swift */; };
 		8987DFE828342473006186E1 /* TripModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8987DFE728342473006186E1 /* TripModel.swift */; };
 		8987DFEA28342755006186E1 /* TripService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8987DFE928342755006186E1 /* TripService.swift */; };
@@ -39,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1DC373AB28343F230052CE68 /* ServiceUnsplashError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceUnsplashError.swift; sourceTree = "<group>"; };
+		1DC373AE28343FD20052CE68 /* URLSession+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Extension.swift"; sourceTree = "<group>"; };
 		8987DFE42834237D006186E1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8987DFE728342473006186E1 /* TripModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripModel.swift; sourceTree = "<group>"; };
 		8987DFE928342755006186E1 /* TripService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripService.swift; sourceTree = "<group>"; };
@@ -82,6 +86,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1DC373AA28343EF70052CE68 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				1DC373AB28343F230052CE68 /* ServiceUnsplashError.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
+		1DC373AD28343F930052CE68 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				1DC373AE28343FD20052CE68 /* URLSession+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		8987DFDF283422A3006186E1 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +121,7 @@
 		8987DFE1283422B3006186E1 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				1DC373AA28343EF70052CE68 /* Error */,
 				8987DFE928342755006186E1 /* TripService.swift */,
 			);
 			path = Service;
@@ -146,6 +167,7 @@
 		8991B35928341ACE0049B6B6 /* Trippie */ = {
 			isa = PBXGroup;
 			children = (
+				1DC373AD28343F930052CE68 /* Extension */,
 				8987DFE3283422DE006186E1 /* Core */,
 				8987DFE0283422AF006186E1 /* Model */,
 				8987DFE1283422B3006186E1 /* Service */,
@@ -332,7 +354,9 @@
 				8987DFEC28342EA9006186E1 /* HomeViewModel.swift in Sources */,
 				8991B35D28341ACE0049B6B6 /* SceneDelegate.swift in Sources */,
 				8987DFE828342473006186E1 /* TripModel.swift in Sources */,
+				1DC373AF28343FD20052CE68 /* URLSession+Extension.swift in Sources */,
 				8987DFEA28342755006186E1 /* TripService.swift in Sources */,
+				1DC373AC28343F230052CE68 /* ServiceUnsplashError.swift in Sources */,
 				8987DFE52834237D006186E1 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

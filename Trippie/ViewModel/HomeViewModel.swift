@@ -15,7 +15,7 @@ class HomeViewModel {
     }
     
     func loadUnsplashData() {
-        service.fetchRequestFromUnsplash(city: "Barreiras BA") { response in
+        service.fetchRequestFromUnsplash(city: "Barreiras") { response in
             switch response {
                 case .success(let unsplash):
                     print(unsplash?.results.first?.urls.full)
