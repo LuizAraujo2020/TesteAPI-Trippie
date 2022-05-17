@@ -20,7 +20,7 @@ class HomeViewModel {
                 case .success(let unsplash):
                     print(unsplash?.results.first?.urls.full)
                 case .failure(let err):
-                    print(err)
+                    print(err.errorDescription)
             }
         }
     }
