@@ -15,11 +15,13 @@ class TripService {
     private let key = "MhhlHI6wOceOY7nYiKoAwqZgUVtuw_IFdxrBE8BOEM0"
     var session: SessionRequest
     
+    typealias completionHandler = (Result<Unsplash?, Error>) -> Void
+    
     init(session: SessionRequest = URLSession.shared) {
         self.session = session
     }
     
-    func fetchRequestFromUnsplash(city: String, completion: @escaping (Result<Unsplash?, Error>) -> Void) {
+    func fetchRequestFromUnsplash(city: String, completion: @escaping completionHandler) {
         let urlUnsplash = "https://api.unsplash.com/search/photos/?query=\(city)&per_page=1&client_id=\(self.key)"
         guard let url = URL(string: urlUnsplash) else {
             return
