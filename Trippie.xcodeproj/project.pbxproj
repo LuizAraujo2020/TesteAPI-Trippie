@@ -10,7 +10,6 @@
 		8991B35B28341ACE0049B6B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8991B35A28341ACE0049B6B6 /* AppDelegate.swift */; };
 		8991B35D28341ACE0049B6B6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8991B35C28341ACE0049B6B6 /* SceneDelegate.swift */; };
 		8991B35F28341ACE0049B6B6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8991B35E28341ACE0049B6B6 /* ViewController.swift */; };
-		8991B36228341ACE0049B6B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8991B36028341ACE0049B6B6 /* Main.storyboard */; };
 		8991B36528341ACE0049B6B6 /* Trippie.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8991B36328341ACE0049B6B6 /* Trippie.xcdatamodeld */; };
 		8991B36728341AD30049B6B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8991B36628341AD30049B6B6 /* Assets.xcassets */; };
 		8991B36A28341AD30049B6B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8991B36828341AD30049B6B6 /* LaunchScreen.storyboard */; };
@@ -41,7 +40,6 @@
 		8991B35A28341ACE0049B6B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8991B35C28341ACE0049B6B6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		8991B35E28341ACE0049B6B6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		8991B36128341ACE0049B6B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8991B36428341ACE0049B6B6 /* Trippie.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Trippie.xcdatamodel; sourceTree = "<group>"; };
 		8991B36628341AD30049B6B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8991B36928341AD30049B6B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -104,7 +102,6 @@
 				8991B35A28341ACE0049B6B6 /* AppDelegate.swift */,
 				8991B35C28341ACE0049B6B6 /* SceneDelegate.swift */,
 				8991B35E28341ACE0049B6B6 /* ViewController.swift */,
-				8991B36028341ACE0049B6B6 /* Main.storyboard */,
 				8991B36628341AD30049B6B6 /* Assets.xcassets */,
 				8991B36828341AD30049B6B6 /* LaunchScreen.storyboard */,
 				8991B36B28341AD30049B6B6 /* Info.plist */,
@@ -140,6 +137,7 @@
 				8991B35328341ACE0049B6B6 /* Sources */,
 				8991B35428341ACE0049B6B6 /* Frameworks */,
 				8991B35528341ACE0049B6B6 /* Resources */,
+				8991B38D28341DAC0049B6B6 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -236,7 +234,6 @@
 			files = (
 				8991B36A28341AD30049B6B6 /* LaunchScreen.storyboard in Resources */,
 				8991B36728341AD30049B6B6 /* Assets.xcassets in Resources */,
-				8991B36228341ACE0049B6B6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,6 +252,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8991B38D28341DAC0049B6B6 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 8;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8991B35328341ACE0049B6B6 /* Sources */ = {
@@ -301,14 +318,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		8991B36028341ACE0049B6B6 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8991B36128341ACE0049B6B6 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		8991B36828341AD30049B6B6 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -446,7 +455,6 @@
 				INFOPLIST_FILE = Trippie/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -474,7 +482,6 @@
 				INFOPLIST_FILE = Trippie/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
