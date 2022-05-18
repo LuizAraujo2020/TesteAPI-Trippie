@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21C52" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
+    <entity name="Plan" representedClassName="Plan" syncable="YES" codeGenerationType="class"/>
+    <entity name="TodoItem" representedClassName="TodoItem" syncable="YES">
+        <attribute name="isCompleted" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="todoList" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TodoList" inverseName="todoItem" inverseEntity="TodoList"/>
+    </entity>
+    <entity name="TodoList" representedClassName="TodoList" syncable="YES">
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="todoItem" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="TodoItem" inverseName="todoList" inverseEntity="TodoItem"/>
+        <relationship name="trip" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Trip" inverseName="todoList" inverseEntity="Trip"/>
+    </entity>
+    <entity name="Trip" representedClassName="Trip" syncable="YES">
+        <attribute name="arrivalDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="checkoutDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="city" optional="YES" attributeType="String"/>
+        <attribute name="isFavorite" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="thumbnail" optional="YES" attributeType="String"/>
+        <relationship name="todoList" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="TodoList" inverseName="trip" inverseEntity="TodoList"/>
+    </entity>
+    <elements>
+        <element name="TodoItem" positionX="171.963134765625" positionY="22.15884399414062" width="128" height="74"/>
+        <element name="TodoList" positionX="20.773681640625" positionY="215.0641784667969" width="128" height="88"/>
+        <element name="Trip" positionX="-54" positionY="-9" width="128" height="133"/>
+        <element name="Plan" positionX="63" positionY="135" width="128" height="29"/>
+    </elements>
+</model>

@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D17F2E828356ECC006B3848 /* Trippie.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1D17F2E628356ECC006B3848 /* Trippie.xcdatamodeld */; };
+		1D17F2FC2835772A006B3848 /* Trip+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D17F2F62835772A006B3848 /* Trip+CoreDataClass.swift */; };
+		1D17F2FD2835772A006B3848 /* Trip+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D17F2F72835772A006B3848 /* Trip+CoreDataProperties.swift */; };
+		1D17F2FE2835772A006B3848 /* TodoList+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D17F2F82835772A006B3848 /* TodoList+CoreDataClass.swift */; };
+		1D17F2FF2835772A006B3848 /* TodoList+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D17F2F92835772A006B3848 /* TodoList+CoreDataProperties.swift */; };
+		1D17F3002835772A006B3848 /* TodoItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D17F2FA2835772A006B3848 /* TodoItem+CoreDataClass.swift */; };
+		1D17F3012835772A006B3848 /* TodoItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D17F2FB2835772A006B3848 /* TodoItem+CoreDataProperties.swift */; };
 		1DC373AC28343F230052CE68 /* ServiceUnsplashError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC373AB28343F230052CE68 /* ServiceUnsplashError.swift */; };
 		1DC373AF28343FD20052CE68 /* URLSession+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC373AE28343FD20052CE68 /* URLSession+Extension.swift */; };
 		8987DFE52834237D006186E1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8987DFE42834237D006186E1 /* HomeViewController.swift */; };
@@ -15,7 +22,6 @@
 		8987DFEC28342EA9006186E1 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8987DFEB28342EA9006186E1 /* HomeViewModel.swift */; };
 		8991B35B28341ACE0049B6B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8991B35A28341ACE0049B6B6 /* AppDelegate.swift */; };
 		8991B35D28341ACE0049B6B6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8991B35C28341ACE0049B6B6 /* SceneDelegate.swift */; };
-		8991B36528341ACE0049B6B6 /* Trippie.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8991B36328341ACE0049B6B6 /* Trippie.xcdatamodeld */; };
 		8991B36728341AD30049B6B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8991B36628341AD30049B6B6 /* Assets.xcassets */; };
 		8991B36A28341AD30049B6B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8991B36828341AD30049B6B6 /* LaunchScreen.storyboard */; };
 		8991B37528341AD30049B6B6 /* TrippieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8991B37428341AD30049B6B6 /* TrippieTests.swift */; };
@@ -41,6 +47,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D17F2E728356ECC006B3848 /* Trippie.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Trippie.xcdatamodel; sourceTree = "<group>"; };
+		1D17F2F62835772A006B3848 /* Trip+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Trip+CoreDataClass.swift"; sourceTree = "<group>"; };
+		1D17F2F72835772A006B3848 /* Trip+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Trip+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		1D17F2F82835772A006B3848 /* TodoList+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TodoList+CoreDataClass.swift"; sourceTree = "<group>"; };
+		1D17F2F92835772A006B3848 /* TodoList+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TodoList+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		1D17F2FA2835772A006B3848 /* TodoItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TodoItem+CoreDataClass.swift"; sourceTree = "<group>"; };
+		1D17F2FB2835772A006B3848 /* TodoItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TodoItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		1DC373AB28343F230052CE68 /* ServiceUnsplashError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceUnsplashError.swift; sourceTree = "<group>"; };
 		1DC373AE28343FD20052CE68 /* URLSession+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Extension.swift"; sourceTree = "<group>"; };
 		8987DFE42834237D006186E1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -50,7 +63,6 @@
 		8991B35728341ACE0049B6B6 /* Trippie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trippie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8991B35A28341ACE0049B6B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8991B35C28341ACE0049B6B6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8991B36428341ACE0049B6B6 /* Trippie.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Trippie.xcdatamodel; sourceTree = "<group>"; };
 		8991B36628341AD30049B6B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8991B36928341AD30049B6B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8991B36B28341AD30049B6B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -86,6 +98,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D17F2F52835747B006B3848 /* Persistance */ = {
+			isa = PBXGroup;
+			children = (
+				1D17F2E628356ECC006B3848 /* Trippie.xcdatamodeld */,
+				1D17F2F62835772A006B3848 /* Trip+CoreDataClass.swift */,
+				1D17F2F72835772A006B3848 /* Trip+CoreDataProperties.swift */,
+				1D17F2F82835772A006B3848 /* TodoList+CoreDataClass.swift */,
+				1D17F2F92835772A006B3848 /* TodoList+CoreDataProperties.swift */,
+				1D17F2FA2835772A006B3848 /* TodoItem+CoreDataClass.swift */,
+				1D17F2FB2835772A006B3848 /* TodoItem+CoreDataProperties.swift */,
+			);
+			path = Persistance;
+			sourceTree = "<group>";
+		};
 		1DC373AA28343EF70052CE68 /* Error */ = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +139,7 @@
 		8987DFE0283422AF006186E1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1D17F2F52835747B006B3848 /* Persistance */,
 				8987DFE728342473006186E1 /* TripModel.swift */,
 			);
 			path = Model;
@@ -176,7 +203,6 @@
 				8991B36628341AD30049B6B6 /* Assets.xcassets */,
 				8991B36828341AD30049B6B6 /* LaunchScreen.storyboard */,
 				8991B36B28341AD30049B6B6 /* Info.plist */,
-				8991B36328341ACE0049B6B6 /* Trippie.xcdatamodeld */,
 			);
 			path = Trippie;
 			sourceTree = "<group>";
@@ -349,14 +375,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8991B36528341ACE0049B6B6 /* Trippie.xcdatamodeld in Sources */,
+				1D17F2FD2835772A006B3848 /* Trip+CoreDataProperties.swift in Sources */,
 				8991B35B28341ACE0049B6B6 /* AppDelegate.swift in Sources */,
 				8987DFEC28342EA9006186E1 /* HomeViewModel.swift in Sources */,
 				8991B35D28341ACE0049B6B6 /* SceneDelegate.swift in Sources */,
+				1D17F3012835772A006B3848 /* TodoItem+CoreDataProperties.swift in Sources */,
+				1D17F3002835772A006B3848 /* TodoItem+CoreDataClass.swift in Sources */,
+				1D17F2FF2835772A006B3848 /* TodoList+CoreDataProperties.swift in Sources */,
 				8987DFE828342473006186E1 /* TripModel.swift in Sources */,
+				1D17F2FC2835772A006B3848 /* Trip+CoreDataClass.swift in Sources */,
 				1DC373AF28343FD20052CE68 /* URLSession+Extension.swift in Sources */,
 				8987DFEA28342755006186E1 /* TripService.swift in Sources */,
 				1DC373AC28343F230052CE68 /* ServiceUnsplashError.swift in Sources */,
+				1D17F2FE2835772A006B3848 /* TodoList+CoreDataClass.swift in Sources */,
+				1D17F2E828356ECC006B3848 /* Trippie.xcdatamodeld in Sources */,
 				8987DFE52834237D006186E1 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -693,12 +725,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		8991B36328341ACE0049B6B6 /* Trippie.xcdatamodeld */ = {
+		1D17F2E628356ECC006B3848 /* Trippie.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				8991B36428341ACE0049B6B6 /* Trippie.xcdatamodel */,
+				1D17F2E728356ECC006B3848 /* Trippie.xcdatamodel */,
 			);
-			currentVersion = 8991B36428341ACE0049B6B6 /* Trippie.xcdatamodel */;
+			currentVersion = 1D17F2E728356ECC006B3848 /* Trippie.xcdatamodel */;
 			path = Trippie.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
