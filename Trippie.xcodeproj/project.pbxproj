@@ -27,6 +27,7 @@
 		8991B37528341AD30049B6B6 /* TrippieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8991B37428341AD30049B6B6 /* TrippieTests.swift */; };
 		8991B37F28341AD40049B6B6 /* TrippieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8991B37E28341AD40049B6B6 /* TrippieUITests.swift */; };
 		8991B38128341AD40049B6B6 /* TrippieUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8991B38028341AD40049B6B6 /* TrippieUITestsLaunchTests.swift */; };
+		B20A4CBE2836CC320040DC31 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20A4CBD2836CC320040DC31 /* HomeTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		8991B37A28341AD30049B6B6 /* TrippieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrippieUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8991B37E28341AD40049B6B6 /* TrippieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrippieUITests.swift; sourceTree = "<group>"; };
 		8991B38028341AD40049B6B6 /* TrippieUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrippieUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B20A4CBD2836CC320040DC31 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				8987DFE42834237D006186E1 /* HomeViewController.swift */,
+				B20A4CBD2836CC320040DC31 /* HomeTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -366,7 +369,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which swiftlint >/dev/null; then\n    swiftlint\nelse\n  echo \"error: SwiftLint not installed, download from https://github.com/realm/SwiftLint\" \n  return 0\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -389,6 +392,7 @@
 				1DC373AC28343F230052CE68 /* ServiceUnsplashError.swift in Sources */,
 				1D17F2FE2835772A006B3848 /* TodoList+CoreDataClass.swift in Sources */,
 				1D17F2E828356ECC006B3848 /* Trippie.xcdatamodeld in Sources */,
+				B20A4CBE2836CC320040DC31 /* HomeTableViewCell.swift in Sources */,
 				8987DFE52834237D006186E1 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
