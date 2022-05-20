@@ -10,7 +10,7 @@ import UIKit
 class HomeViewController: UIViewController {
     
     //MARK: - Properties
-    let viewModel: HomeViewModel
+    private let viewModel: HomeViewModel
     
     private lazy var backgroundView: UIView = {
         let backgroundView = UIView()
@@ -48,6 +48,7 @@ class HomeViewController: UIViewController {
     //MARK: - LifeCycle
     init(viewModel: HomeViewModel = HomeViewModel()) {
         self.viewModel = viewModel
+        
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -65,10 +66,15 @@ class HomeViewController: UIViewController {
     }
     
     //MARK: - Helpers
-    
     private func setupNavigationBar() {
-        title = "Hello"
+        let editButton = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: nil)
+        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: nil)
         
+        navigationItem.title = "Johnny's Trips"
+        navigationItem.setLeftBarButton(editButton, animated: true)
+        navigationItem.setRightBarButton(addButton, animated: true)
+        
+        navigationController?.navigationBar.tintColor = .black
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.backgroundColor = UIColor(named: "Blue-2")
     }
@@ -112,9 +118,28 @@ extension HomeViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let delete = UIContextualAction(style: .destructive, title: "Delete", handler: { action, view, completionHandler in
+            // TODO: - Delete Trip function
+        })
+        
+        return UISwipeActionsConfiguration(actions: [delete])
+    }
+    
 }
 
 extension HomeViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.cellIdentifier, for: indexPath) as? HomeTableViewCell else {
+            return UITableViewCell()
+        }
+        
+        cell.labelDisplay.text = "Belo Horizonte"
+        
+        return cell
+    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 3
@@ -122,6 +147,10 @@ extension HomeViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 193
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -139,16 +168,5 @@ extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         return nil
     }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.cellIdentifier, for: indexPath) as? HomeTableViewCell else {
-            return UITableViewCell()
-        }
-        
-        cell.cityLabel.text = "Belo Horizonte"
-        
-        return cell
-    }
-    
     
 }

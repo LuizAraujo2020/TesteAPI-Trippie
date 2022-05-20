@@ -22,21 +22,21 @@ class HomeTableViewCell: UITableViewCell {
         return backgroundLabel
     }()
     
-    lazy var thumbCity: UIImageView = {
-        let thumbCity = UIImageView()
-        
-        thumbCity.image = UIImage(named: "PlaceholderCity")
-        
-        return thumbCity
+    lazy var thumbDisplay: UIImageView = {
+        let thumbDisplay = UIImageView()
+
+        thumbDisplay.image = UIImage(named: "PlaceholderCity")
+
+        return thumbDisplay
     }()
     
-    lazy var cityLabel: UILabel = {
-        let cityLabel = UILabel()
+    lazy var labelDisplay: UILabel = {
+        let labelDisplay = UILabel()
         
-        cityLabel.text = "Placeholder"
-        cityLabel.font = .boldSystemFont(ofSize: 15)
+        labelDisplay.text = "Placeholder"
+        labelDisplay.font = .boldSystemFont(ofSize: 15)
         
-        return cityLabel
+        return labelDisplay
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -58,19 +58,19 @@ class HomeTableViewCell: UITableViewCell {
     private func setupUI() {
         setupUICell()
         
-        contentView.addSubview(thumbCity)
+        contentView.addSubview(thumbDisplay)
         contentView.addSubview(backgroundLabel)
-        backgroundLabel.addSubview(cityLabel)
+        backgroundLabel.addSubview(labelDisplay)
         
-        thumbCity.translatesAutoresizingMaskIntoConstraints = false
+        thumbDisplay.translatesAutoresizingMaskIntoConstraints = false
         backgroundLabel.translatesAutoresizingMaskIntoConstraints = false
-        cityLabel.translatesAutoresizingMaskIntoConstraints = false
+        labelDisplay.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            thumbCity.topAnchor.constraint(equalTo: contentView.topAnchor),
-            thumbCity.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-            thumbCity.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            thumbCity.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
+            thumbDisplay.topAnchor.constraint(equalTo: contentView.topAnchor),
+            thumbDisplay.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            thumbDisplay.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            thumbDisplay.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
         ])
         
         NSLayoutConstraint.activate([
@@ -81,9 +81,9 @@ class HomeTableViewCell: UITableViewCell {
         ])
         
         NSLayoutConstraint.activate([
-            cityLabel.topAnchor.constraint(equalTo: backgroundLabel.topAnchor, constant: 16),
-            cityLabel.bottomAnchor.constraint(equalTo: backgroundLabel.bottomAnchor, constant: -16),
-            cityLabel.leadingAnchor.constraint(equalTo: backgroundLabel.leadingAnchor, constant: 12)
+            labelDisplay.topAnchor.constraint(equalTo: backgroundLabel.topAnchor, constant: 16),
+            labelDisplay.bottomAnchor.constraint(equalTo: backgroundLabel.bottomAnchor, constant: -16),
+            labelDisplay.leadingAnchor.constraint(equalTo: backgroundLabel.leadingAnchor, constant: 12)
         ])
     }
     
