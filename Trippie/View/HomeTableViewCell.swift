@@ -10,39 +10,18 @@ import UIKit
 
 class HomeTableViewCell: UITableViewCell {
     
+    //MARK: - Properties
     static let cellIdentifier = "TripsCells"
     
-    private lazy var backgroundLabel: UIView = {
-        let backgroundLabel = UIView()
-        
-        backgroundLabel.backgroundColor = .white
-        backgroundLabel.layer.cornerRadius = 15
-        backgroundLabel.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
-        
-        return backgroundLabel
-    }()
-    
-    lazy var thumbDisplay: UIImageView = {
-        let thumbDisplay = UIImageView()
-
-        thumbDisplay.image = UIImage(named: "PlaceholderCity")
+    lazy var thumbDisplay: TripThumbView = {
+        let thumbDisplay = TripThumbView()
 
         return thumbDisplay
     }()
     
-    lazy var labelDisplay: UILabel = {
-        let labelDisplay = UILabel()
-        
-        labelDisplay.text = "Placeholder"
-        labelDisplay.font = .boldSystemFont(ofSize: 15)
-        
-        return labelDisplay
-    }()
-    
+    //MARK: - LifeCycle
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        setupUI()
     }
     
     required init?(coder: NSCoder) {
@@ -52,19 +31,18 @@ class HomeTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
+        setupUI()
+        
         layer.masksToBounds = false
     }
     
+    //MARK: - Helpers
     private func setupUI() {
         setupUICell()
         
         contentView.addSubview(thumbDisplay)
-        contentView.addSubview(backgroundLabel)
-        backgroundLabel.addSubview(labelDisplay)
         
         thumbDisplay.translatesAutoresizingMaskIntoConstraints = false
-        backgroundLabel.translatesAutoresizingMaskIntoConstraints = false
-        labelDisplay.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             thumbDisplay.topAnchor.constraint(equalTo: contentView.topAnchor),
@@ -72,30 +50,11 @@ class HomeTableViewCell: UITableViewCell {
             thumbDisplay.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             thumbDisplay.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
         ])
-        
-        NSLayoutConstraint.activate([
-            backgroundLabel.heightAnchor.constraint(equalToConstant: 52),
-            backgroundLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-            backgroundLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            backgroundLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
-        ])
-        
-        NSLayoutConstraint.activate([
-            labelDisplay.topAnchor.constraint(equalTo: backgroundLabel.topAnchor, constant: 16),
-            labelDisplay.bottomAnchor.constraint(equalTo: backgroundLabel.bottomAnchor, constant: -16),
-            labelDisplay.leadingAnchor.constraint(equalTo: backgroundLabel.leadingAnchor, constant: 12)
-        ])
     }
     
     private func setupUICell() {
         backgroundColor = .clear
         selectionStyle = .none
-        
-        layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOffset = CGSize(width: 0, height: 2)
-        layer.shadowRadius = 2.0
-        layer.shadowOpacity = 0.2
     }
-    
     
 }

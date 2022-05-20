@@ -61,8 +61,14 @@ class HomeViewController: UIViewController {
         
         setupNavigationBar()
         setupUI()
-        
-        view.backgroundColor = UIColor(named: "Blue-2")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.navigationBar.prefersLargeTitles = false
     }
     
     //MARK: - Helpers
@@ -80,6 +86,8 @@ class HomeViewController: UIViewController {
     }
     
     private func setupUI() {
+        view.backgroundColor = UIColor(named: "Blue-2")
+        
         view.addSubview(backgroundView)
         view.addSubview(moicano)
         view.addSubview(tableView)
@@ -115,6 +123,10 @@ class HomeViewController: UIViewController {
 extension HomeViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let tripView = TripViewController()
+        
+        navigationController?.pushViewController(tripView, animated: true)
+        
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
@@ -136,7 +148,7 @@ extension HomeViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
-        cell.labelDisplay.text = "Belo Horizonte"
+        cell.thumbDisplay.labelDisplay.text = "Belo Horizonte"
         
         return cell
     }
