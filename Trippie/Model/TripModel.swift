@@ -7,15 +7,15 @@
 
 import Foundation
 
-struct Unsplash: Codable {
+struct Unsplash: Decodable {
     let results: [Results]
 }
 
-struct Results: Codable {
+struct Results: Decodable {
     let urls: UrlImage
 }
 
-struct UrlImage: Codable {
+struct UrlImage: Decodable {
     let full: String
     let thumb: String
 }

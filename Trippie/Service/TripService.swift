@@ -24,6 +24,7 @@ class TripService {
     
     func fetchRequestFromUnsplash(city: String, completion: @escaping completionHandler) {
         let urlUnsplash = "https://api.unsplash.com/search/photos/?query=\(city)&per_page=1&client_id=\(self.key)"
+        
         guard let url = URL(string: urlUnsplash) else {
             completion(.failure(ServiceUnsplashError.urlNil))
             return
