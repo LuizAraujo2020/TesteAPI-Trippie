@@ -17,6 +17,7 @@
 		1DC373AC28343F230052CE68 /* ServiceUnsplashError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC373AB28343F230052CE68 /* ServiceUnsplashError.swift */; };
 		1DC373AF28343FD20052CE68 /* URLSession+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC373AE28343FD20052CE68 /* URLSession+Extension.swift */; };
 		8987DFE52834237D006186E1 /* TripsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8987DFE42834237D006186E1 /* TripsViewController.swift */; };
+		8952844E2889D77500647E90 /* ViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8952844D2889D77500647E90 /* ViewModelTests.swift */; };
 		8987DFE828342473006186E1 /* TripModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8987DFE728342473006186E1 /* TripModel.swift */; };
 		8987DFEA28342755006186E1 /* TripService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8987DFE928342755006186E1 /* TripService.swift */; };
 		8987DFEC28342EA9006186E1 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8987DFEB28342EA9006186E1 /* HomeViewModel.swift */; };
@@ -24,7 +25,7 @@
 		8991B35D28341ACE0049B6B6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8991B35C28341ACE0049B6B6 /* SceneDelegate.swift */; };
 		8991B36728341AD30049B6B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8991B36628341AD30049B6B6 /* Assets.xcassets */; };
 		8991B36A28341AD30049B6B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8991B36828341AD30049B6B6 /* LaunchScreen.storyboard */; };
-		8991B37528341AD30049B6B6 /* TrippieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8991B37428341AD30049B6B6 /* TrippieTests.swift */; };
+		8991B37528341AD30049B6B6 /* ServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8991B37428341AD30049B6B6 /* ServiceTests.swift */; };
 		8991B37F28341AD40049B6B6 /* TrippieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8991B37E28341AD40049B6B6 /* TrippieUITests.swift */; };
 		8991B38128341AD40049B6B6 /* TrippieUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8991B38028341AD40049B6B6 /* TrippieUITestsLaunchTests.swift */; };
 		B20A4CBE2836CC320040DC31 /* TripsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20A4CBD2836CC320040DC31 /* TripsTableViewCell.swift */; };
@@ -61,6 +62,7 @@
 		1DC373AB28343F230052CE68 /* ServiceUnsplashError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceUnsplashError.swift; sourceTree = "<group>"; };
 		1DC373AE28343FD20052CE68 /* URLSession+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Extension.swift"; sourceTree = "<group>"; };
 		8987DFE42834237D006186E1 /* TripsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsViewController.swift; sourceTree = "<group>"; };
+		8952844D2889D77500647E90 /* ViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelTests.swift; sourceTree = "<group>"; };
 		8987DFE728342473006186E1 /* TripModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripModel.swift; sourceTree = "<group>"; };
 		8987DFE928342755006186E1 /* TripService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripService.swift; sourceTree = "<group>"; };
 		8987DFEB28342EA9006186E1 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -71,7 +73,7 @@
 		8991B36928341AD30049B6B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8991B36B28341AD30049B6B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8991B37028341AD30049B6B6 /* TrippieTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrippieTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8991B37428341AD30049B6B6 /* TrippieTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrippieTests.swift; sourceTree = "<group>"; };
+		8991B37428341AD30049B6B6 /* ServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTests.swift; sourceTree = "<group>"; };
 		8991B37A28341AD30049B6B6 /* TrippieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrippieUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8991B37E28341AD40049B6B6 /* TrippieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrippieUITests.swift; sourceTree = "<group>"; };
 		8991B38028341AD40049B6B6 /* TrippieUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrippieUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -220,7 +222,8 @@
 		8991B37328341AD30049B6B6 /* TrippieTests */ = {
 			isa = PBXGroup;
 			children = (
-				8991B37428341AD30049B6B6 /* TrippieTests.swift */,
+				8991B37428341AD30049B6B6 /* ServiceTests.swift */,
+				8952844D2889D77500647E90 /* ViewModelTests.swift */,
 			);
 			path = TrippieTests;
 			sourceTree = "<group>";
@@ -437,7 +440,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8991B37528341AD30049B6B6 /* TrippieTests.swift in Sources */,
+				8952844E2889D77500647E90 /* ViewModelTests.swift in Sources */,
+				8991B37528341AD30049B6B6 /* ServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
