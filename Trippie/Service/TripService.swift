@@ -8,12 +8,14 @@
 import Foundation
 
 protocol SessionRequest {
-    func dataTask(with request: URL, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask
+    func dataTask(with request: URL, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTaskProtocol
 }
 
-class TripService {
-    
-    typealias completionHandler = (Result<Unsplash?, ServiceUnsplashError>) -> Void
+protocol URLSessionDataTaskProtocol {
+    func resume()
+}
+
+class TripService: TripServiceProtocol {
     
     private let key = "MhhlHI6wOceOY7nYiKoAwqZgUVtuw_IFdxrBE8BOEM0"
     private let session: SessionRequest
