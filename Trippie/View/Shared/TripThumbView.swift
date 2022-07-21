@@ -11,12 +11,11 @@ import UIKit
 class TripThumbView: UIView {
     
     //MARK: - Properties
-    private lazy var backgroundLabel: UIView = {
-        let backgroundLabel = UIView()
+    lazy var backgroundLabel: BackgroundView = {
+        let backgroundLabel = BackgroundView(alignLabel: true)
         
-        backgroundLabel.backgroundColor = .white
-        backgroundLabel.layer.cornerRadius = 15
-        backgroundLabel.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+        backgroundLabel.backgroundLabel.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+        backgroundLabel.translatesAutoresizingMaskIntoConstraints = false
         
         return backgroundLabel
     }()
@@ -25,17 +24,9 @@ class TripThumbView: UIView {
         let thumbDisplay = UIImageView()
 
         thumbDisplay.image = UIImage(named: "PlaceholderCity")
+        thumbDisplay.translatesAutoresizingMaskIntoConstraints = false
 
         return thumbDisplay
-    }()
-    
-    lazy var labelDisplay: UILabel = {
-        let labelDisplay = UILabel()
-        
-        labelDisplay.text = "Placeholder"
-        labelDisplay.font = .boldSystemFont(ofSize: 15)
-        
-        return labelDisplay
     }()
     
     //MARK: - LifeCycle
@@ -55,15 +46,9 @@ class TripThumbView: UIView {
     
     //MARK: - Helpers
     private func setupUI() {
-        setupShadow()
-        
         addSubview(thumbDisplay)
-        thumbDisplay.addSubview(backgroundLabel)
-        backgroundLabel.addSubview(labelDisplay)
         
-        thumbDisplay.translatesAutoresizingMaskIntoConstraints = false
-        backgroundLabel.translatesAutoresizingMaskIntoConstraints = false
-        labelDisplay.translatesAutoresizingMaskIntoConstraints = false
+        thumbDisplay.addSubview(backgroundLabel)
         
         NSLayoutConstraint.activate([
             thumbDisplay.heightAnchor.constraint(equalToConstant: 193),
@@ -79,21 +64,6 @@ class TripThumbView: UIView {
             backgroundLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             backgroundLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor)
         ])
-        
-        NSLayoutConstraint.activate([
-            labelDisplay.topAnchor.constraint(equalTo: backgroundLabel.topAnchor, constant: 16),
-            labelDisplay.bottomAnchor.constraint(equalTo: backgroundLabel.bottomAnchor, constant: -16),
-            labelDisplay.leadingAnchor.constraint(equalTo: backgroundLabel.leadingAnchor, constant: 12)
-        ])
-    }
-    
-    private func setupShadow() {
-        backgroundColor = .clear
-        
-        layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOffset = CGSize(width: 0, height: 2)
-        layer.shadowRadius = 2.0
-        layer.shadowOpacity = 0.2
     }
     
 }

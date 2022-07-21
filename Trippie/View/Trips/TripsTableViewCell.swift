@@ -8,13 +8,15 @@
 import Foundation
 import UIKit
 
-class HomeTableViewCell: UITableViewCell {
+class TripsTableViewCell: UITableViewCell {
     
     //MARK: - Properties
     static let cellIdentifier = "TripsCells"
     
     lazy var thumbDisplay: TripThumbView = {
         let thumbDisplay = TripThumbView()
+        
+        thumbDisplay.translatesAutoresizingMaskIntoConstraints = false
 
         return thumbDisplay
     }()
@@ -41,8 +43,6 @@ class HomeTableViewCell: UITableViewCell {
         setupUICell()
         
         contentView.addSubview(thumbDisplay)
-        
-        thumbDisplay.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             thumbDisplay.topAnchor.constraint(equalTo: contentView.topAnchor),

@@ -16,7 +16,7 @@
 		1D17F3012835772A006B3848 /* TodoItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D17F2FB2835772A006B3848 /* TodoItem+CoreDataProperties.swift */; };
 		1DC373AC28343F230052CE68 /* ServiceUnsplashError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC373AB28343F230052CE68 /* ServiceUnsplashError.swift */; };
 		1DC373AF28343FD20052CE68 /* URLSession+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC373AE28343FD20052CE68 /* URLSession+Extension.swift */; };
-		8987DFE52834237D006186E1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8987DFE42834237D006186E1 /* HomeViewController.swift */; };
+		8987DFE52834237D006186E1 /* TripsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8987DFE42834237D006186E1 /* TripsViewController.swift */; };
 		8987DFE828342473006186E1 /* TripModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8987DFE728342473006186E1 /* TripModel.swift */; };
 		8987DFEA28342755006186E1 /* TripService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8987DFE928342755006186E1 /* TripService.swift */; };
 		8987DFEC28342EA9006186E1 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8987DFEB28342EA9006186E1 /* HomeViewModel.swift */; };
@@ -27,9 +27,10 @@
 		8991B37528341AD30049B6B6 /* TrippieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8991B37428341AD30049B6B6 /* TrippieTests.swift */; };
 		8991B37F28341AD40049B6B6 /* TrippieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8991B37E28341AD40049B6B6 /* TrippieUITests.swift */; };
 		8991B38128341AD40049B6B6 /* TrippieUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8991B38028341AD40049B6B6 /* TrippieUITestsLaunchTests.swift */; };
-		B20A4CBE2836CC320040DC31 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20A4CBD2836CC320040DC31 /* HomeTableViewCell.swift */; };
+		B20A4CBE2836CC320040DC31 /* TripsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20A4CBD2836CC320040DC31 /* TripsTableViewCell.swift */; };
 		B20A4CC2283818710040DC31 /* TripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20A4CC1283818710040DC31 /* TripViewController.swift */; };
 		B20A4CC528382EE70040DC31 /* TripThumbView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20A4CC428382EE70040DC31 /* TripThumbView.swift */; };
+		B219036428889A6900935CC5 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B219036328889A6900935CC5 /* BackgroundView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,7 +60,7 @@
 		1D17F2FB2835772A006B3848 /* TodoItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TodoItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		1DC373AB28343F230052CE68 /* ServiceUnsplashError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceUnsplashError.swift; sourceTree = "<group>"; };
 		1DC373AE28343FD20052CE68 /* URLSession+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Extension.swift"; sourceTree = "<group>"; };
-		8987DFE42834237D006186E1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		8987DFE42834237D006186E1 /* TripsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsViewController.swift; sourceTree = "<group>"; };
 		8987DFE728342473006186E1 /* TripModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripModel.swift; sourceTree = "<group>"; };
 		8987DFE928342755006186E1 /* TripService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripService.swift; sourceTree = "<group>"; };
 		8987DFEB28342EA9006186E1 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -74,9 +75,10 @@
 		8991B37A28341AD30049B6B6 /* TrippieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrippieUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8991B37E28341AD40049B6B6 /* TrippieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrippieUITests.swift; sourceTree = "<group>"; };
 		8991B38028341AD40049B6B6 /* TrippieUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrippieUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		B20A4CBD2836CC320040DC31 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		B20A4CBD2836CC320040DC31 /* TripsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsTableViewCell.swift; sourceTree = "<group>"; };
 		B20A4CC1283818710040DC31 /* TripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripViewController.swift; sourceTree = "<group>"; };
 		B20A4CC428382EE70040DC31 /* TripThumbView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripThumbView.swift; sourceTree = "<group>"; };
+		B219036328889A6900935CC5 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,9 +140,8 @@
 			isa = PBXGroup;
 			children = (
 				B20A4CC328382ED10040DC31 /* Shared */,
-				8987DFE42834237D006186E1 /* HomeViewController.swift */,
-				B20A4CBD2836CC320040DC31 /* HomeTableViewCell.swift */,
-				B20A4CC1283818710040DC31 /* TripViewController.swift */,
+				B21903652888BFAC00935CC5 /* Trips */,
+				B21903662888BFD200935CC5 /* Trip */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -237,8 +238,26 @@
 			isa = PBXGroup;
 			children = (
 				B20A4CC428382EE70040DC31 /* TripThumbView.swift */,
+				B219036328889A6900935CC5 /* BackgroundView.swift */,
 			);
 			path = Shared;
+			sourceTree = "<group>";
+		};
+		B21903652888BFAC00935CC5 /* Trips */ = {
+			isa = PBXGroup;
+			children = (
+				8987DFE42834237D006186E1 /* TripsViewController.swift */,
+				B20A4CBD2836CC320040DC31 /* TripsTableViewCell.swift */,
+			);
+			path = Trips;
+			sourceTree = "<group>";
+		};
+		B21903662888BFD200935CC5 /* Trip */ = {
+			isa = PBXGroup;
+			children = (
+				B20A4CC1283818710040DC31 /* TripViewController.swift */,
+			);
+			path = Trip;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -408,8 +427,9 @@
 				1DC373AC28343F230052CE68 /* ServiceUnsplashError.swift in Sources */,
 				1D17F2FE2835772A006B3848 /* TodoList+CoreDataClass.swift in Sources */,
 				1D17F2E828356ECC006B3848 /* Trippie.xcdatamodeld in Sources */,
-				B20A4CBE2836CC320040DC31 /* HomeTableViewCell.swift in Sources */,
-				8987DFE52834237D006186E1 /* HomeViewController.swift in Sources */,
+				B20A4CBE2836CC320040DC31 /* TripsTableViewCell.swift in Sources */,
+				B219036428889A6900935CC5 /* BackgroundView.swift in Sources */,
+				8987DFE52834237D006186E1 /* TripsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

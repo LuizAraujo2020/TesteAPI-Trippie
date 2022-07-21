@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class TripsViewController: UIViewController {
     
     //MARK: - Properties
     private let viewModel: HomeViewModel
@@ -16,6 +16,7 @@ class HomeViewController: UIViewController {
         let backgroundView = UIView()
         
         backgroundView.backgroundColor = UIColor(named: "Blue-1")
+        backgroundView.translatesAutoresizingMaskIntoConstraints = false
         
         return backgroundView
     }()
@@ -26,6 +27,7 @@ class HomeViewController: UIViewController {
         moicano.backgroundColor = UIColor(named: "Blue-2")
         moicano.layer.cornerRadius = 15
         moicano.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+        moicano.translatesAutoresizingMaskIntoConstraints = false
         
         return moicano
     }()
@@ -34,10 +36,11 @@ class HomeViewController: UIViewController {
         let tableView = UITableView(frame: .zero, style: .insetGrouped)
         
         tableView.backgroundColor = UIColor(named: "Blue-1")
+        tableView.translatesAutoresizingMaskIntoConstraints = false
         
         tableView.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: 25))
         
-        tableView.register(HomeTableViewCell.self, forCellReuseIdentifier: HomeTableViewCell.cellIdentifier)
+        tableView.register(TripsTableViewCell.self, forCellReuseIdentifier: TripsTableViewCell.cellIdentifier)
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -92,10 +95,6 @@ class HomeViewController: UIViewController {
         view.addSubview(moicano)
         view.addSubview(tableView)
         
-        backgroundView.translatesAutoresizingMaskIntoConstraints = false
-        moicano.translatesAutoresizingMaskIntoConstraints = false
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        
         NSLayoutConstraint.activate([
             backgroundView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             backgroundView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
@@ -120,7 +119,7 @@ class HomeViewController: UIViewController {
 
 }
 
-extension HomeViewController: UITableViewDelegate {
+extension TripsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let tripView = TripViewController()
@@ -141,14 +140,14 @@ extension HomeViewController: UITableViewDelegate {
     
 }
 
-extension HomeViewController: UITableViewDataSource {
+extension TripsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.cellIdentifier, for: indexPath) as? HomeTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: TripsTableViewCell.cellIdentifier, for: indexPath) as? TripsTableViewCell else {
             return UITableViewCell()
         }
         
-        cell.thumbDisplay.labelDisplay.text = "Belo Horizonte"
+        cell.thumbDisplay.backgroundLabel.labelDisplay.text = "Belo Horizonte"
         
         return cell
     }
