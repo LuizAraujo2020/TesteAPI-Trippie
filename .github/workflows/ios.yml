@@ -13,8 +13,6 @@ jobs:
 
       - name: Build
         run: |
-          set -o pipefail
-          xcodebuild build \
-          -destination 'platform=iOS Simulator,name=iPhone 11 Pro' \
-          | xcpretty
+           xcodebuild clean build -project Trippie.xcodeproj -scheme Trippie -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
+
         
