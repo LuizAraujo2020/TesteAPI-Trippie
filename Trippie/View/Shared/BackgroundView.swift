@@ -24,7 +24,7 @@ class BackgroundView: UIView {
     lazy var labelDisplay: UILabel = {
         let labelDisplay = UILabel()
         
-        labelDisplay.text = "Placeholder"
+        labelDisplay.text = "..."
         labelDisplay.font = .boldSystemFont(ofSize: 15)
         labelDisplay.translatesAutoresizingMaskIntoConstraints = false
         
@@ -80,15 +80,6 @@ class BackgroundView: UIView {
                 labelDisplay.leadingAnchor.constraint(equalTo: backgroundLabel.leadingAnchor, constant: 12)
             ])
         }
-    }
-    
-    private func setupShadow() {
-        backgroundColor = .clear
-        
-        layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOffset = CGSize(width: 0, height: 2)
-        layer.shadowRadius = 2.0
-        layer.shadowOpacity = 0.2
     }
     
 }

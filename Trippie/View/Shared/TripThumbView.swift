@@ -11,18 +11,20 @@ import UIKit
 class TripThumbView: UIView {
     
     //MARK: - Properties
-    lazy var backgroundLabel: BackgroundView = {
-        let backgroundLabel = BackgroundView(alignLabel: true)
+    lazy var backgroundView: BackgroundView = {
+        let backgroundView = BackgroundView(alignLabel: true)
         
-        backgroundLabel.backgroundLabel.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
-        backgroundLabel.translatesAutoresizingMaskIntoConstraints = false
+        backgroundView.backgroundLabel.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+        backgroundView.translatesAutoresizingMaskIntoConstraints = false
         
-        return backgroundLabel
+        return backgroundView
     }()
     
-    lazy var thumbDisplay: UIImageView = {
+    lazy var thumbImageView: UIImageView = {
         let thumbDisplay = UIImageView()
 
+        thumbDisplay.clipsToBounds = true
+        thumbDisplay.layer.cornerRadius = 20
         thumbDisplay.image = UIImage(named: "PlaceholderCity")
         thumbDisplay.translatesAutoresizingMaskIntoConstraints = false
 
@@ -46,23 +48,25 @@ class TripThumbView: UIView {
     
     //MARK: - Helpers
     private func setupUI() {
-        addSubview(thumbDisplay)
+        setupShadow()
         
-        thumbDisplay.addSubview(backgroundLabel)
+        addSubview(thumbImageView)
+        
+        thumbImageView.addSubview(backgroundView)
         
         NSLayoutConstraint.activate([
-            thumbDisplay.heightAnchor.constraint(equalToConstant: 193),
-            thumbDisplay.topAnchor.constraint(equalTo: self.topAnchor),
-            thumbDisplay.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            thumbDisplay.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            thumbDisplay.trailingAnchor.constraint(equalTo: self.trailingAnchor)
+            thumbImageView.heightAnchor.constraint(equalToConstant: 193),
+            thumbImageView.topAnchor.constraint(equalTo: self.topAnchor),
+            thumbImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            thumbImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            thumbImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor)
         ])
         
         NSLayoutConstraint.activate([
-            backgroundLabel.heightAnchor.constraint(equalToConstant: 52),
-            backgroundLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            backgroundLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            backgroundLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor)
+            backgroundView.heightAnchor.constraint(equalToConstant: 52),
+            backgroundView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            backgroundView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            backgroundView.trailingAnchor.constraint(equalTo: self.trailingAnchor)
         ])
     }
     

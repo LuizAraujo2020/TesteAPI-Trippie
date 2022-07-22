@@ -13,7 +13,7 @@ class TripsTableViewCell: UITableViewCell {
     //MARK: - Properties
     static let cellIdentifier = "TripsCells"
     
-    lazy var thumbDisplay: TripThumbView = {
+    lazy var thumbView: TripThumbView = {
         let thumbDisplay = TripThumbView()
         
         thumbDisplay.translatesAutoresizingMaskIntoConstraints = false
@@ -42,13 +42,13 @@ class TripsTableViewCell: UITableViewCell {
     private func setupUI() {
         setupUICell()
         
-        contentView.addSubview(thumbDisplay)
+        contentView.addSubview(thumbView)
         
         NSLayoutConstraint.activate([
-            thumbDisplay.topAnchor.constraint(equalTo: contentView.topAnchor),
-            thumbDisplay.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-            thumbDisplay.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            thumbDisplay.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
+            thumbView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            thumbView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            thumbView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            thumbView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
         ])
     }
     

@@ -137,13 +137,9 @@ class ServiceTests: XCTestCase {
             }
             return MockURLSessionDataTask()
         }
-        
-        
     }
     
     class MockURLSessionDataTask: URLSessionDataTaskProtocol {
         func resume() { }
     }
-    
-    
 }

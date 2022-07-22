@@ -10,7 +10,7 @@ import UIKit
 class TripsViewController: UIViewController {
     
     //MARK: - Properties
-    private let viewModel: HomeViewModel
+    private let viewModel: TripsViewModel
     
     private lazy var backgroundView: UIView = {
         let backgroundView = UIView()
@@ -48,8 +48,44 @@ class TripsViewController: UIViewController {
         return tableView
     }()
     
+    private lazy var alertNewTrip: UIAlertController = {
+        let alertController = UIAlertController(title: "New Trip", message: "Enter a city name for this trip.", preferredStyle: .alert)
+        
+        alertController.addTextField { textField in
+            textField.placeholder = "City name"
+            textField.clearButtonMode = .whileEditing
+            textField.autocapitalizationType = .words
+            textField.enablesReturnKeyAutomatically = true
+            
+            textField.delegate = self
+        }
+        
+        let saveAction = UIAlertAction(title: "Save", style: .default, handler: { [unowned self] alert in
+            let cityNameTextField = alertController.textFields![0] as UITextField
+            
+            viewModel.createNewTrip(city: cityNameTextField.text!)
+            
+            cityNameTextField.text = nil
+        })
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { alert in
+            let cityNameTextField = alertController.textFields![0] as UITextField
+            
+            cityNameTextField.text = nil
+        })
+        
+        saveAction.isEnabled = false
+        
+        alertController.addAction(saveAction)
+        alertController.addAction(cancelAction)
+        
+        alertController.preferredAction = saveAction
+        
+        return alertController
+    }()
+    
     //MARK: - LifeCycle
-    init(viewModel: HomeViewModel = HomeViewModel()) {
+    init(viewModel: TripsViewModel = TripsViewModel()) {
         self.viewModel = viewModel
         
         super.init(nibName: nil, bundle: nil)
@@ -64,6 +100,9 @@ class TripsViewController: UIViewController {
         
         setupNavigationBar()
         setupUI()
+        
+        viewModel.delegate = self
+        viewModel.loadTrips()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -77,7 +116,7 @@ class TripsViewController: UIViewController {
     //MARK: - Helpers
     private func setupNavigationBar() {
         let editButton = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: nil)
-        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: nil)
+        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addCity))
         
         navigationItem.title = "Johnny's Trips"
         navigationItem.setLeftBarButton(editButton, animated: true)
@@ -116,9 +155,14 @@ class TripsViewController: UIViewController {
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
     }
+    
+    @objc private func addCity() {
+        present(alertNewTrip, animated: true)
+    }
 
 }
 
+// MARK: Table View Delegate
 extension TripsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -147,13 +191,39 @@ extension TripsViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
-        cell.thumbDisplay.backgroundLabel.labelDisplay.text = "Belo Horizonte"
+        let trip = viewModel.trips[indexPath.section]
+        
+        let cityName = trip.city!
+        
+        cell.thumbView.backgroundView.labelDisplay.text = cityName
+        
+        if let thumbnailImage = trip.thumbnailImage {
+            cell.thumbView.thumbImageView.image = thumbnailImage
+        } else {
+            viewModel.loadUnsplashData(city: cityName) { response in
+                switch response {
+                case .success(let thumbString):
+                    DispatchQueue.global(qos: .userInteractive).async {
+                        let urlThumb = URL(string: thumbString!)!
+                        let dataImage = try! Data(contentsOf: urlThumb)
+                        let image = UIImage(data: dataImage)
+                        
+                        DispatchQueue.main.async {
+                            cell.thumbView.thumbImageView.image = image
+                            trip.thumbnailImage = image
+                        }
+                    }
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+        }
         
         return cell
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return viewModel.trips.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -178,6 +248,35 @@ extension TripsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         return nil
+    }
+    
+}
+
+// - MARK: UITextFieldDelegate
+extension TripsViewController: UITextFieldDelegate {
+    
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        let isEmpty = viewModel.textIsEmpty(text: textField.text)
+        
+        alertNewTrip.preferredAction?.isEnabled = !isEmpty
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        let isEmpty = viewModel.textIsEmpty(text: textField.text)
+        
+        return !isEmpty
+    }
+    
+}
+
+// MARK: TripsViewDelegate
+extension TripsViewController: TripsViewDelegate {
+    
+    func didReloadData() {
+        UIView.transition(with: tableView,
+                          duration: 0.5,
+                          options: .transitionCrossDissolve,
+                          animations: { self.tableView.reloadData() })
     }
     
 }

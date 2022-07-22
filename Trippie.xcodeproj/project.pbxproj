@@ -32,6 +32,7 @@
 		B20A4CC2283818710040DC31 /* TripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20A4CC1283818710040DC31 /* TripViewController.swift */; };
 		B20A4CC528382EE70040DC31 /* TripThumbView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20A4CC428382EE70040DC31 /* TripThumbView.swift */; };
 		B219036428889A6900935CC5 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B219036328889A6900935CC5 /* BackgroundView.swift */; };
+		B21903682889ED7000935CC5 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21903672889ED7000935CC5 /* UIView+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		B20A4CC1283818710040DC31 /* TripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripViewController.swift; sourceTree = "<group>"; };
 		B20A4CC428382EE70040DC31 /* TripThumbView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripThumbView.swift; sourceTree = "<group>"; };
 		B219036328889A6900935CC5 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
+		B21903672889ED7000935CC5 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				1DC373AE28343FD20052CE68 /* URLSession+Extension.swift */,
+				B21903672889ED7000935CC5 /* UIView+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -406,6 +409,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B21903682889ED7000935CC5 /* UIView+Extension.swift in Sources */,
 				B20A4CC528382EE70040DC31 /* TripThumbView.swift in Sources */,
 				1D17F2FD2835772A006B3848 /* Trip+CoreDataProperties.swift in Sources */,
 				8991B35B28341ACE0049B6B6 /* AppDelegate.swift in Sources */,

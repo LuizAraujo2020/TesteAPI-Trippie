@@ -10,12 +10,13 @@ import XCTest
 
 class ViewModelTests: XCTestCase {
     
-    var sut: HomeViewModel?
+    var sut: TripsViewModel?
     var service: TripServiceMock?
+    
     override func setUpWithError() throws {
         try super.setUpWithError()
         service = TripServiceMock()
-        sut = HomeViewModel(service: service!)
+        sut = TripsViewModel(service: service!)
     }
     
     override func tearDownWithError() throws {
@@ -26,8 +27,9 @@ class ViewModelTests: XCTestCase {
     
     func testIfLoadUnsplashDataWithSuccess() {
         let expectation = expectation(description: "Loaded Data With Success")
+        let city = "Brasilia"
 
-        sut?.loadUnsplashData(completion: { result in
+        sut?.loadUnsplashData(city: city, completion: { result in
             switch result {
                 case .success(let data):
                     XCTAssertNotNil(data)
@@ -42,10 +44,11 @@ class ViewModelTests: XCTestCase {
     
     func testIfLoadUnsplashDataWithError() {
         let expectation = expectation(description: "Loaded Data With Error")
+        let city = "Brasilia"
         
         service?.isMeantToFailure = true
-        
-        sut?.loadUnsplashData(completion: { result in
+
+        sut?.loadUnsplashData(city: city, completion: { result in
             switch result {
                 case .success(_):
                     XCTFail()
